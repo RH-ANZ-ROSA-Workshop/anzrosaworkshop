@@ -124,6 +124,26 @@
     </li>
     
     <li  class="parent">
+        <a href="#aro-stuff">ARO Introduction</a>
+        
+            <ul>
+                
+                
+                    <li >
+                        <a href="#appoverview">Azure Command Line Intro</a>
+                        
+                    </li>
+                
+                    <li >
+                        <a href="#appoverview">ARO Command Line Intro</a>
+                        
+                    </li>
+                
+            </ul>
+        
+    </li>
+    
+    <li  class="parent">
         <a href="#lab-ratingapp">Lab 1 - Go Microservices</a>
         
             <ul>
@@ -309,7 +329,145 @@
                     <h2>Basic concepts</h2>
                 
 
-            <h3 id="source-to-image-s2i">Source-To-Image (S2I)</h3>
+            <h3 id="rosa-cli-demonstration--rosa-example-setup">ROSA CLI Demonstration &amp; ROSA example setup</h3>
+
+<p>In this section, we’ll give you some links that can be used after the class for independent study.  We’ll demonstrate how to use some ROSA commands, but due to the nature of our shared environment for this workshop, not every student will be able to log in with the full permissions required.  When you test this on your own with your own AWS credentials, all the commands will work in the same manner as they have been demonstrated today.</p>
+
+<p>To effectively administer a ROSA instance, you’ll use a combination of “rosa,” “oc,” and “aws” command line commands.  Below is a concise list of some of the more commonly used ROSA command-line commands which we will be demonstrating today.  Later in the hands-on section of the workshop, you will be using some of the “oc” commands to deploy an application and query its status.  The complete ROSA command list can be found at the following location: <a href="https://docs.openshift.com/rosa/rosa_cli/rosa-get-started-cli.html">https://docs.openshift.com/rosa/rosa_cli/rosa-get-started-cli.html</a></p>
+
+<blockquote>
+  <p><strong>NOTE:</strong> You will need to get your individual ROSA token to use when you practice this independently.  Instructions can be found in the section “Configuring the ROSA CLI” in the Get Started link above.</p>
+</blockquote>
+
+<h4 id="rosa-cli-demonstration">ROSA CLI Demonstration</h4>
+
+<p>Need a cmd line demo blah blah pre-amble.</p>
+
+<!-- Begin collapsible container div -->
+<div class="collapsible-content-container">
+  <!-- Begin collapsible container button -->
+  <button class="toggle-collapsible">Toggle</button>
+  <!-- Begin collapsible container content div -->
+  <div class="collapsible-content">
+    <!-- Begin parsedText -->
+    
+<p>Login as cluster-admin per the Lab Guide and RHPDS email w/ password.</p>
+
+<p>rosa login [arguments] + explanation</p>
+
+<p>rosa verify permissions [arguments] + explanation (e.g. rosa verify permissions –region=us-west-2)</p>
+
+<p>rosa verify quota [arguments] + explanation</p>
+
+<p>rosa download oc + explanation</p>
+
+<p>rosa verify oc</p>
+
+<p>rosa whoami [arguments] + explanation</p>
+
+<p>rosa version [arguments] + explanation</p>
+
+<p>rosa create cluster –cluster=<cluster_name> --debug</cluster_name></p>
+
+<p>rosa list users –cluster=mycluster</p>
+
+<p>rosa describe –cluster=mycluster</p>
+
+<p>rosa list clusters</p>
+
+
+    <!-- End parsedText -->
+  </div>
+  <!-- End collapsible container content div -->
+</div>
+<!-- End collapsible container div -->
+
+<h4 id="rosa-example-setup">ROSA example setup</h4>
+
+<p>Further below, we’ve also provided three links to both the official ROSA video on the Red Hat website and a short unofficial YouTube video created by an Australian-based Red Hat employee that demonstrates an abbreviated version of how to set up ROSA yourself with your own AWS credentials for your independent study.</p>
+
+<p>Official video link posted for students to watch later - <a href="https://www.youtube.com/watch?v=MFcbuxkP3C4">https://www.youtube.com/watch?v=MFcbuxkP3C4</a></p>
+
+<p>Video link posted for students to watch later - <a href="https://youtu.be/l7ylYBP8p4Q">https://youtu.be/l7ylYBP8p4Q</a></p>
+
+<!-- Begin collapsible container div -->
+<div class="collapsible-content-container">
+  <!-- Begin collapsible container button -->
+  <button class="toggle-collapsible">Toggle</button>
+  <!-- Begin collapsible container content div -->
+  <div class="collapsible-content">
+    <!-- Begin parsedText -->
+    
+<p>AWS UI - create EC2 machine (t2.medium) &amp; create/re-use key-pair</p>
+
+<p>AWS UI - rename cluster</p>
+
+<p>Terminal - ssh ec2-user@<IPAddress> -i /Users/<username>/Downloads/<key-pair>.pem</key-pair></username></IPAddress></p>
+
+<p>sudo su</p>
+
+<p>hostnamectl set-hostname <hostname></hostname></p>
+
+<p>Exit, exit &amp; relogin &amp; sudo su</p>
+
+<p>aws configure &amp; put in access key &amp; secret access key &amp; region &amp; output format</p>
+
+<p>console.redhat.com/openshift/downloads - DL the ROSA CLI (choosing the right OS type first)</p>
+
+<p>aws sts get-caller-identity</p>
+
+<p>aws ec2 describe-instances</p>
+
+<p>tar -xvf ROSACLI.tar &amp; mv rosa /usr/bin</p>
+
+<p>rosa –help (or just “rosa” or “rosa -h”) to show list of arguments</p>
+
+<p>https://console.redhat.com/openshift/token/rosa - download token</p>
+
+<p>rosa login &amp; paste token contents into prompt.</p>
+
+<p>rosa verify permissions</p>
+
+<p>rosa verify quota</p>
+
+<p>rosa init</p>
+
+<p>rosa download oc</p>
+
+<p>tar -xvf OCCLI.tar &amp; mv oc /usr/bin &amp; mv kubectl /usr/bin</p>
+
+<p>rosa verify oc</p>
+
+<p>rosa create cluster –cluster-name=<ROSA-example></ROSA-example></p>
+
+<p>rosa list clusters</p>
+
+<p>Rosa logs install -c <ROSA-example> --watch (to watch cluster install logs)</ROSA-example></p>
+
+<p>URL at end: https://console.redhat.com/openshift/details/s/<guid></guid></p>
+
+<p>Terminal: rosa create admin –cluster=<cluster_name></cluster_name></p>
+
+<p>Get login cmd from results (e.g. - oc login https://api.<cluster-name>.vpbx.p1.openshiftapps.com:6443 --username cluster-admin --password abcde-fghij-klmno-pqrst</cluster-name></p>
+
+<p>In GUI, under Clusters click “Open Console” on right and login w/ cluster-admin/<password from="" last="" step=""></password></p>
+
+<p>Terminal: watch oc get pods -n openshift-logging</p>
+
+<p>AWS Console: go to CloudWatch to watch status</p>
+
+<p>Terminal: rosa list addons –cluster=<cluster-name></cluster-name></p>
+
+
+    <!-- End parsedText -->
+  </div>
+  <!-- End collapsible container content div -->
+</div>
+<!-- End collapsible container div -->
+
+<p>Provide link to Oren’s “Advanced?” (do we want to label it that?) workshop - <a href="http://rosaworkshop.io">Red Hat OpenShift on AWS Workshop</a></p>
+
+<h3 id="source-to-image-s2i">Source-To-Image (S2I)</h3>
 
 <p>Source-to-Image (S2I) is a toolkit and workflow for building reproducible container images from source code. S2I produces ready-to-run images by injecting source code into a container image and letting the container prepare that source code for execution. By creating self-assembling builder images, you can version and control your build environments exactly like you use container images to version your runtime environments.</p>
 
@@ -448,6 +606,45 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
 <p>Build objects share common characteristics: inputs for a build, the need to complete a build process, logging the build process, publishing resources from successful builds, and publishing the final status of the build. Builds take advantage of resource restrictions, specifying limitations on resources such as CPU usage, memory usage, and build or pod execution time.</p>
 
 <p>See here for more details: <a href="https://docs.openshift.com/container-platform/3.11/architecture/core_concepts/builds_and_image_streams.html">https://docs.openshift.com/container-platform/3.11/architecture/core_concepts/builds_and_image_streams.html</a></p>
+
+        </section>
+    
+
+    
+        <section id="aro-stuff" class="h1">
+            
+                    
+                    <h1 class="nocount">ARO Introduction</h1>
+                    
+                
+
+            <p>Before we get started working on today’s labs, let’s have a quick look at what we’ll be deploying.</p>
+
+        </section>
+    
+
+    
+        <section id="appoverview" class="h2">
+            
+                    <h2>Azure Command Line Intro</h2>
+                
+
+            <p>You will be deploying a ratings application on Azure Red Hat OpenShift.</p>
+
+<p><img src="media/app-overview.png" alt="Application diagram" /></p>
+
+        </section>
+    
+
+    
+        <section id="appoverview" class="h2">
+            
+                    <h2>ARO Command Line Intro</h2>
+                
+
+            <p>You will be deploying a ratings application on Azure Red Hat OpenShift.</p>
+
+<p><img src="media/app-overview.png" alt="Application diagram" /></p>
 
         </section>
     
@@ -2074,6 +2271,13 @@ ostoy-microservice-86b4c6f559-p594d   1/1       Running   0          1h
   <img class="github-avatar" src="https://avatars.githubusercontent.com/SimonDelord?s=60&amp;v=4" />
   <span>
     <a href="http://github.com/SimonDelord">@SimonDelord</a>
+  </span>
+</div>
+
+<div class="github-contributor">
+  <img class="github-avatar" src="https://avatars.githubusercontent.com/alflang?s=60&amp;v=4" />
+  <span>
+    <a href="http://github.com/alflang">@alflang</a>
   </span>
 </div>
 
