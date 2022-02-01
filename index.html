@@ -124,26 +124,6 @@
     </li>
     
     <li  class="parent">
-        <a href="#aro-stuff">ARO Introduction</a>
-        
-            <ul>
-                
-                
-                    <li >
-                        <a href="#appoverview">Azure Command Line Intro</a>
-                        
-                    </li>
-                
-                    <li >
-                        <a href="#appoverview">ARO Command Line Intro</a>
-                        
-                    </li>
-                
-            </ul>
-        
-    </li>
-    
-    <li  class="parent">
         <a href="#lab-ratingapp">Lab 1 - Go Microservices</a>
         
             <ul>
@@ -189,7 +169,7 @@
     </li>
     
     <li  class="parent">
-        <a href="#lab-clusterapp">Lab 2 - ARO Internals</a>
+        <a href="#lab-clusterapp">Lab 2 - ROSA Internals</a>
         
             <ul>
                 
@@ -257,7 +237,7 @@
 </div>
 
 <p id="copyright-notice">
-    Azure® is a registered trademark of Microsoft Corporation. Red Hat, Red Hat Enterprise Linux, the Shadowman logo, and OpenShift, are trademarks of Red Hat, Inc.
+    AWS® is a registered trademark of Amazon. Red Hat, Red Hat Enterprise Linux, the Shadowman logo, and OpenShift, are trademarks of Red Hat, Inc.
 </p>
         </div>
 
@@ -276,22 +256,22 @@
                     
                 
 
-            <p><a href="https://azure.microsoft.com/en-us/services/openshift/">Azure Red Hat OpenShift</a> is a fully managed Red Hat OpenShift service in Azure that is jointly engineered and supported by Microsoft and Red Hat. In this lab, you’ll go through a set of tasks that will help you understand some of the concepts of deploying and securing container based applications on top of Azure Red Hat OpenShift.</p>
+            <p><a href="https://aws.amazon.com/rosa/">Red Hat OpenShift Service on AWS</a> (ROSA) is a fully managed Red Hat OpenShift service in AWS that is jointly engineered and supported by Microsoft and Red Hat. In this lab, you’ll go through a set of tasks that will help you understand some of the concepts of deploying and securing container based applications on top of Red Hat OpenShift Service on AWS.</p>
 
 <p>You can use this guide as an OpenShift tutorial and as study material to help you get started to learn OpenShift.</p>
 
 <p>Some of the things you’ll be going through:</p>
 
 <ul>
-  <li>Creating a <a href="https://docs.openshift.com/aro/dev_guide/projects.html">project</a> on the Azure Red Hat OpenShift Web Console</li>
-  <li>Deploying a MongoDB container that uses Azure Disks for <a href="https://docs.openshift.com/aro/dev_guide/persistent_volumes.html">persistent storage</a></li>
-  <li>Restoring data into the MongoDB container by <a href="https://docs.openshift.com/aro/dev_guide/executing_remote_commands.html">executing commands</a> on the Pod</li>
-  <li>Deploying a Node JS API and frontend app from Git Hub using <a href="https://docs.openshift.com/aro/creating_images/s2i.html">Source-To-Image (S2I)</a></li>
-  <li>Exposing the web application frontend using <a href="https://docs.openshift.com/aro/dev_guide/routes.html">Routes</a></li>
-  <li>Creating a <a href="https://docs.openshift.com/aro/admin_guide/managing_networking.html#admin-guide-networking-networkpolicy">network policy</a> to control communication between the different tiers in the application</li>
+  <li>Creating a <a href="https://docs.openshift.com/container-platform/latest/applications/projects/working-with-projects.html">project</a> on the Red Hat OpenShift Service on AWS web console</li>
+  <li>Deploying a MongoDB container that uses AWS Disks for <a href="https://docs.openshift.com/rosa/storage/persistent_storage/osd-persistent-storage-aws.html">persistent storage</a></li>
+  <li>Restoring data into the MongoDB container by <a href="https://docs.openshift.com/container-platform/latest/nodes/containers/nodes-containers-remote-commands.html">executing commands</a> on the Pod</li>
+  <li>Deploying a Node JS API and frontend app from Git Hub using <a href="https://docs.openshift.com/container-platform/latest/openshift_images/using_images/using-s21-images.html">Source-To-Image (S2I)</a></li>
+  <li>Exposing the web application frontend using <a href="https://docs.openshift.com/container-platform/latest/networking/routes/route-configuration.html">Routes</a></li>
+  <li>Creating a <a href="https://docs.openshift.com/container-platform/latest/networking/understanding-networking.html">network policy</a> to control communication between the different tiers in the application</li>
 </ul>
 
-<p>You’ll be doing the majority of the labs using the OpenShift CLI, but you can also accomplish them using the Azure Red Hat OpenShift web console.</p>
+<p>You’ll be doing the majority of the labs using the OpenShift CLI, but you can also accomplish them using the Red Hat OpenShift Service on AWS web console.</p>
 
         </section>
     
@@ -333,7 +313,7 @@
 
 <p>In this section, we’ll give you some links that can be used after the class for independent study.  We’ll demonstrate how to use some ROSA commands, but due to the nature of our shared environment for this workshop, not every student will be able to log in with the full permissions required.  When you test this on your own with your own AWS credentials, all the commands will work in the same manner as they have been demonstrated today.</p>
 
-<p>To effectively administer a ROSA instance, you’ll use a combination of “rosa,” “oc,” and “aws” command line commands.  Below is a concise list of some of the more commonly used ROSA command-line commands which we will be demonstrating today.  Later in the hands-on section of the workshop, you will be using some of the “oc” commands to deploy an application and query its status.  The complete ROSA command list can be found at the following location: <a href="https://docs.openshift.com/rosa/rosa_cli/rosa-get-started-cli.html">https://docs.openshift.com/rosa/rosa_cli/rosa-get-started-cli.html</a></p>
+<p>To effectively administer a ROSA cluster, you’ll use a combination of “rosa,” “oc,” and “aws” command line commands.  Below is a concise list of some of the more commonly used ROSA command-line commands which we will be demonstrating today.  Later in the hands-on section of the workshop, you will be using some of the “oc” commands to deploy an application and query its status. The complete ROSA command list can be found at the following location: <a href="https://docs.openshift.com/rosa/rosa_cli/rosa-get-started-cli.html">https://docs.openshift.com/rosa/rosa_cli/rosa-get-started-cli.html</a></p>
 
 <blockquote>
   <p><strong>NOTE:</strong> You will need to get your individual ROSA token to use when you practice this independently.  Instructions can be found in the section “Configuring the ROSA CLI” in the Get Started link above.</p>
@@ -353,27 +333,27 @@
     
 <p>Login as cluster-admin per the Lab Guide and RHPDS email w/ password.</p>
 
-<p>rosa login [arguments] + explanation</p>
+<p>rosa login [arguments] (to login)</p>
 
-<p>rosa verify permissions [arguments] + explanation (e.g. rosa verify permissions –region=us-west-2)</p>
+<p>rosa verify permissions [arguments] (e.g. rosa verify permissions –region=ap-southeast-2) - (to verify the AWS permissions are set correctly for the specified region)</p>
 
-<p>rosa verify quota [arguments] + explanation</p>
+<p>rosa verify quota [arguments] (to verify the AWS quotas are set correctly for the region)</p>
 
-<p>rosa download oc + explanation</p>
+<p>rosa download oc (to download the OpenShift oc client software)</p>
 
-<p>rosa verify oc</p>
+<p>rosa verify oc - (to verify the OpenShift oc client software has been installed and is available)</p>
 
-<p>rosa whoami [arguments] + explanation</p>
+<p>rosa whoami [arguments] (to get the currently logged in user and environment details)</p>
 
-<p>rosa version [arguments] + explanation</p>
+<p>rosa version [arguments] (to get the version of the installed ROSA software)</p>
 
-<p>rosa create cluster –cluster=<cluster_name> --debug</cluster_name></p>
+<p>rosa create cluster –cluster=<cluster_name> --debug (to create a cluster with the specified name.  NB: there are MANY options to this command and a thorough review of the documentation is recommended.)</cluster_name></p>
 
-<p>rosa list users –cluster=mycluster</p>
+<p>rosa list users –cluster=<cluster_name> (to get a list of users associated with the specified cluster)</cluster_name></p>
 
-<p>rosa describe –cluster=mycluster</p>
+<p>rosa list clusters (to list current clusters)</p>
 
-<p>rosa list clusters</p>
+<p>rosa describe cluster –cluster=<cluster_name> (to get details of specified cluster)</cluster_name></p>
 
 
     <!-- End parsedText -->
@@ -384,11 +364,13 @@
 
 <h4 id="rosa-example-setup">ROSA example setup</h4>
 
-<p>Further below, we’ve also provided three links to both the official ROSA video on the Red Hat website and a short unofficial YouTube video created by an Australian-based Red Hat employee that demonstrates an abbreviated version of how to set up ROSA yourself with your own AWS credentials for your independent study.</p>
+<p>Further below, we’ve also provided links to both the official ROSA video on the Red Hat website and a short unofficial YouTube video created by an Australian-based Red Hat employee that demonstrates an abbreviated version of how to set up ROSA yourself with your own AWS credentials for your independent study.</p>
 
-<p>Official video link posted for students to watch later - <a href="https://www.youtube.com/watch?v=MFcbuxkP3C4">https://www.youtube.com/watch?v=MFcbuxkP3C4</a></p>
+<p>Official ROSA video - <a href="https://www.youtube.com/watch?v=MFcbuxkP3C4">https://www.youtube.com/watch?v=MFcbuxkP3C4</a></p>
 
-<p>Video link posted for students to watch later - <a href="https://youtu.be/l7ylYBP8p4Q">https://youtu.be/l7ylYBP8p4Q</a></p>
+<p>ROSA setup - <a href="https://youtu.be/l7ylYBP8p4Q">https://youtu.be/l7ylYBP8p4Q</a></p>
+
+<p>For reference, the below section is an extraction of commands used in the ROSA setup video above.</p>
 
 <!-- Begin collapsible container div -->
 <div class="collapsible-content-container">
@@ -465,7 +447,7 @@
 </div>
 <!-- End collapsible container div -->
 
-<p>Provide link to Oren’s “Advanced?” (do we want to label it that?) workshop - <a href="http://rosaworkshop.io">Red Hat OpenShift on AWS Workshop</a></p>
+<p>Link to alternative ROSA workshop with more advanced setup steps - <a href="http://rosaworkshop.io">Red Hat OpenShift on AWS Workshop</a></p>
 
 <h3 id="source-to-image-s2i">Source-To-Image (S2I)</h3>
 
@@ -611,45 +593,6 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
     
 
     
-        <section id="aro-stuff" class="h1">
-            
-                    
-                    <h1 class="nocount">ARO Introduction</h1>
-                    
-                
-
-            <p>Before we get started working on today’s labs, let’s have a quick look at what we’ll be deploying.</p>
-
-        </section>
-    
-
-    
-        <section id="appoverview" class="h2">
-            
-                    <h2>Azure Command Line Intro</h2>
-                
-
-            <p>You will be deploying a ratings application on Azure Red Hat OpenShift.</p>
-
-<p><img src="media/app-overview.png" alt="Application diagram" /></p>
-
-        </section>
-    
-
-    
-        <section id="appoverview" class="h2">
-            
-                    <h2>ARO Command Line Intro</h2>
-                
-
-            <p>You will be deploying a ratings application on Azure Red Hat OpenShift.</p>
-
-<p><img src="media/app-overview.png" alt="Application diagram" /></p>
-
-        </section>
-    
-
-    
         <section id="lab-ratingapp" class="h1">
             
                     
@@ -668,7 +611,7 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
                     <h2>Application Overview</h2>
                 
 
-            <p>You will be deploying a ratings application on Azure Red Hat OpenShift.</p>
+            <p>You will be deploying a ratings application on Red Hat OpenShift Service on AWS.</p>
 
 <p><img src="media/app-overview.png" alt="Application diagram" /></p>
 
@@ -712,9 +655,12 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
                     <h2>Cluster Access</h2>
                 
 
-            <h3 id="access-your-azure-red-hat-openshift-cluster">Access your Azure Red Hat OpenShift Cluster</h3>
+            <h3 id="ssh-session">SSH Session</h3>
+<p>So our first step will be to SSH into the jump host. Details will be provided by the instructor with the command to run and the required password.</p>
 
-<p>We’ll start by getting into our cluster.</p>
+<p>It will look similar to this: <strong>ssh student01@3.104.30…</strong></p>
+
+<p><img src="media/jumpssh.png" alt="Jump host SSH" /></p>
 
 <h2 id="connect-to-the-cluster">Connect to the cluster</h2>
 
@@ -831,9 +777,9 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
 <blockquote>
   <p><strong>Resources</strong></p>
   <ul>
-    <li><a href="https://docs.openshift.com/aro/getting_started/access_your_services.html">ARO Documentation - Access your services</a></li>
-    <li><a href="https://docs.openshift.com/aro/cli_reference/get_started_cli.html">ARO Documentation - Getting started with the CLI</a></li>
-    <li><a href="https://docs.openshift.com/aro/dev_guide/projects.html">ARO Documentation - Projects</a></li>
+    <li><a href="https://docs.openshift.com/rosa/rosa_getting_started/rosa-getting-started.html">ROSA Documentation - Getting started</a></li>
+    <li><a href="https://docs.openshift.com/rosa/rosa_cli/rosa-get-started-cli.html">ROSA Documentation - Getting started with the CLI</a></li>
+    <li><a href="https://docs.openshift.com/container-platform/latest/applications/projects/working-with-projects.html">OpenShift Documentation - Projects</a></li>
   </ul>
 </blockquote>
 
@@ -856,12 +802,12 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
   <div class="collapsible-content">
     <!-- Begin parsedText -->
     
-<p>Azure Red Hat OpenShift provides many container images and templates to make creating new applications &amp; services easy. The template provides parameter fields to define all the mandatory environment variables (user, password, database name, etc) with predefined defaults including auto-generation of password values. It will also define both a deployment configuration and a service.</p>
+<p>Red Hat OpenShift Service on AWS provides many container images and templates to make creating new applications &amp; services easy. The template provides parameter fields to define all the mandatory environment variables (user, password, database name, etc) with predefined defaults including auto-generation of password values. It will also define both a deployment configuration and a service.</p>
 
 <p>For this exercise we will use the following template:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">mongodb-persistent</code> uses a persistent volume store for the database data which means the data will survive a pod restart. Using persistent volumes requires a persistent volume pool be defined in the Azure Red Hat OpenShift deployment.</li>
+  <li><code class="language-plaintext highlighter-rouge">mongodb-persistent</code> uses a persistent volume store for the database data which means the data will survive a pod restart. Using persistent volumes requires a persistent volume pool be defined in the Red Hat OpenShift Service on AWS deployment.</li>
 </ul>
 
 <blockquote>
@@ -951,9 +897,8 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
 <blockquote>
   <p><strong>Resources</strong></p>
   <ul>
-    <li><a href="https://docs.openshift.com/aro/using_images/db_images/mongodb.html">ARO Documentation - MongoDB</a></li>
-    <li><a href="https://docs.openshift.com/aro/using_images/db_images/mongodb.html#running-mongodb-commands-in-containers">ARO Documentation - Running MongoDB Commands…</a></li>
-    <li><a href="https://docs.openshift.com/aro/dev_guide/templates.html">ARO Documentation - Templates</a></li>
+    <li><a href="https://docs.openshift.com/container-platform/latest/openshift_images/using_images/using-images-overview.html">OpenShift Documentation - Using images</a></li>
+    <li><a href="https://docs.openshift.com/container-platform/latest/openshift_images/using-templates.html">OpenShift Documentation - Templates</a></li>
   </ul>
 </blockquote>
 
@@ -1127,7 +1072,7 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
 
 <p><img src="media/rating-api-github-webhook-url.png" alt="Rating API GitHub trigger url" /></p>
 
-<p>Replace the <code class="language-plaintext highlighter-rouge">&lt;secret&gt;</code> placeholder with the secret you retrieved in the previous step to have a URL similar to <code class="language-plaintext highlighter-rouge">https://api.qv4g35sq.westeurope.aroapp.io:6443/apis/build.openshift.io/v1/namespaces/workshop01/buildconfigs/rating-api/webhooks/zLKX0A_0CQs6qWNwQqpV/github</code>. You’ll use this URL to setup the webhook on your GitHub repository.</p>
+<p>Replace the <code class="language-plaintext highlighter-rouge">&lt;secret&gt;</code> placeholder with the secret you retrieved in the previous step to have a URL similar to <code class="language-plaintext highlighter-rouge">https://api.qv4g35sq.westeurope.rosaapp.io:6443/apis/build.openshift.io/v1/namespaces/workshop01/buildconfigs/rating-api/webhooks/zLKX0A_0CQs6qWNwQqpV/github</code>. You’ll use this URL to setup the webhook on your GitHub repository.</p>
 
 <p>In your GitHub repository (e.g. https://github.com/<your GitHub="" username="">/rating-api), navigate to **Settings -&gt; Webhooks** and select **Add Webhook**.</your></p>
 
@@ -1157,8 +1102,8 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
 <blockquote>
   <p><strong>Resources</strong></p>
   <ul>
-    <li><a href="https://docs.openshift.com/aro/creating_images/s2i.html">ARO Documentation - Creating Images with S2I</a></li>
-    <li><a href="https://docs.openshift.com/aro/dev_guide/builds/triggering_builds.html">ARO Documentation - Triggering builds</a></li>
+    <li><a href="https://docs.openshift.com/container-platform/latest/openshift_images/using_images/using-s21-images.html">OpenShift Documentation - Creating Images with S2I</a></li>
+    <li><a href="https://docs.openshift.com/container-platform/latest/cicd/builds/triggering-builds-build-hooks.html">OpenShift Documentation - Triggering builds</a></li>
   </ul>
 </blockquote>
 
@@ -1261,7 +1206,7 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
 
 <p><img src="media/oc-get-route.png" alt="Retrieve the created route" /></p>
 
-<p>Notice the fully qualified domain name (FQDN) is comprised of the application name and project name by default. The remainder of the FQDN, the subdomain, is your Azure Red Hat OpenShift cluster specific apps subdomain.</p>
+<p>Notice the fully qualified domain name (FQDN) is comprised of the application name and project name by default. The remainder of the FQDN, the subdomain, is your Red Hat OpenShift Service on AWS cluster specific apps subdomain.</p>
 
 
     <!-- End parsedText -->
@@ -1323,7 +1268,7 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
 
 <p><img src="media/rating-web-github-webhook-url.png" alt="Rating Web GitHub trigger url" /></p>
 
-<p>Replace the <code class="language-plaintext highlighter-rouge">&lt;secret&gt;</code> placeholder with the secret you retrieved in the previous step to have a URL similar to <code class="language-plaintext highlighter-rouge">https://api.qv4g35sq.westeurope.aroapp.io:6443/apis/build.openshift.io/v1/namespaces/workshop01/buildconfigs/rating-web/webhooks/VZJewR0m1E65dBAv1IYM/github</code>. You’ll use this URL to setup the webhook on your GitHub repository.</p>
+<p>Replace the <code class="language-plaintext highlighter-rouge">&lt;secret&gt;</code> placeholder with the secret you retrieved in the previous step to have a URL similar to <code class="language-plaintext highlighter-rouge">https://api.qv4g35sq.westeurope.rosaapp.io:6443/apis/build.openshift.io/v1/namespaces/workshop01/buildconfigs/rating-web/webhooks/VZJewR0m1E65dBAv1IYM/github</code>. You’ll use this URL to setup the webhook on your GitHub repository.</p>
 
 <p>In your GitHub repository (e.g. https://github.com/<your GitHub="" username="">/rating-web), navigate to **Settings -&gt; Webhooks** and select **Add Webhook**.</your></p>
 
@@ -1380,9 +1325,7 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
 <blockquote>
   <p><strong>Resources</strong></p>
   <ul>
-    <li><a href="https://docs.openshift.com/aro/creating_images/s2i.html">ARO Documentation - Creating Images with S2I</a></li>
-    <li><a href="https://docs.openshift.com/aro/dev_guide/builds/triggering_builds.html">ARO Documentation - Triggering builds</a></li>
-    <li><a href="https://docs.openshift.com/aro/dev_guide/routes.html">ARO Documentation - Routes</a></li>
+    <li><a href="https://docs.openshift.com/container-platform/latest/networking/routes/route-configuration.html">OpenShift Documentation - Routes</a></li>
   </ul>
 </blockquote>
 
@@ -1395,7 +1338,7 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
                     <h2>Create Network Policy</h2>
                 
 
-            <p>Now that you have the application working, it is time to apply some security hardening. You’ll use <a href="https://docs.openshift.com/aro/admin_guide/managing_networking.html#admin-guide-networking-networkpolicy">network policies</a> to restrict communication to the <code class="language-plaintext highlighter-rouge">rating-api</code>.</p>
+            <p>Now that you have the application working, it is time to apply some security hardening. You’ll use <a href="https://docs.openshift.com/container-platform/latest/networking/network_policy/about-network-policy.html">network policies</a> to restrict communication to the <code class="language-plaintext highlighter-rouge">rating-api</code>.</p>
 
 <h3 id="switch-to-the-cluster-console">Switch to the Cluster Console</h3>
 
@@ -1462,7 +1405,7 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
 <blockquote>
   <p><strong>Resources</strong></p>
   <ul>
-    <li><a href="https://docs.openshift.com/aro/admin_guide/managing_networking.html#admin-guide-networking-networkpolicy">ARO Documentation - Managing Networking with Network Policy</a></li>
+    <li><a href="https://docs.openshift.com/container-platform/latest/networking/understanding-networking.html">OpenShift Documentation - Understanding networking</a></li>
   </ul>
 </blockquote>
 
@@ -1473,7 +1416,7 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
         <section id="lab-clusterapp" class="h1">
             
                     
-                    <h1 class="nocount">Lab 2 - ARO Internals</h1>
+                    <h1 class="nocount">Lab 2 - ROSA Internals</h1>
                     
                 
 
@@ -1508,7 +1451,7 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
 
 <h3 id="about-ostoy">About OSToy</h3>
 
-<p>OSToy is a simple Node.js application that we will deploy to Azure Red Hat OpenShift. It is used to help us explore the functionality of Kubernetes. This application has a user interface which you can:</p>
+<p>OSToy is a simple Node.js application that we will deploy to Red Hat OpenShift Service on AWS. It is used to help us explore the functionality of Kubernetes. This application has a user interface which you can:</p>
 
 <ul>
   <li>write messages to the log (stdout / stderr)</li>
@@ -1567,7 +1510,7 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
 <p>You should receive the following response</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>oc new-project ostoy&lt;student#&gt;
-Now using project <span class="s2">"ostoy&lt;student#&gt;"</span> on server <span class="s2">"https://api.gz49n8jb.westeurope.aroapp.io:6443"</span><span class="nb">.</span>
+Now using project <span class="s2">"ostoy&lt;student#&gt;"</span> on server <span class="s2">"https://api.gz49n8jb.westeurope.rosaapp.io:6443"</span><span class="nb">.</span>
 
 You can add applications to this project with the <span class="s1">'new-app'</span> command. For example, try:
 
@@ -1709,10 +1652,10 @@ secret/ostoy-secret created
 <p>You should see the following response:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NAME          HOST/PORT                                                      PATH      SERVICES              PORT      TERMINATION   WILDCARD
-ostoy-route   ostoy-route-ostoy01.apps.qv4g35sq.westeurope.aroapp.io                   ostoy-frontend-svc    &lt;all&gt;                   None
+ostoy-route   ostoy-route-ostoy01.apps.qv4g35sq.westeurope.rosaapp.io                   ostoy-frontend-svc    &lt;all&gt;                   None
 </code></pre></div></div>
 
-<p>Copy <code class="language-plaintext highlighter-rouge">ostoy-route-ostoy&lt;student#&gt;.apps.qv4g35sq.westeurope.aroapp.io</code> from the command line and paste it into your browser and press enter.  You should see the homepage of our application.</p>
+<p>Copy <code class="language-plaintext highlighter-rouge">ostoy-route-ostoy&lt;student#&gt;.apps.qv4g35sq.westeurope.rosaapp.io</code> from the command line and paste it into your browser and press enter.  You should see the homepage of our application.</p>
 
 <p><img src="media/managedlab/10-ostoy-homepage.png" alt="Home Page" /></p>
 
@@ -1860,11 +1803,11 @@ stderr: Oh no! Error!
 
 <p><img src="media/managedlab/17-1-ostoy-storagepvc.png" alt="StoragePVC" /></p>
 
-<p>If you drill into <strong>ostoy-pvc</strong>, you will see <em>ReadWriteOnce</em> under <em>Access Modes</em>, which means that the volume can only be mounted to one node but the pod(s) can both read and write to that volume.  The default in ARO is for Persistent Volumes to be backed by Azure Disk, but it is possible to chose Azure Files so that you can use the RWX (Read-Write-Many) access mode.  (<a href="https://docs.openshift.com/aro/architecture/additional_concepts/storage.html#pv-access-modes">See here for more info on access modes</a>)</p>
+<p>If you drill into <strong>ostoy-pvc</strong>, you will see <em>ReadWriteOnce</em> under <em>Access Modes</em>, which means that the volume can only be mounted to one node but the pod(s) can both read and write to that volume.  The default in ROSA is for Persistent Volumes to be backed by the Amazon Web Services Elastic File System (AWS EFS) Disk, but it is possible to use AWS Elastic Block Store (AWS EBS).  (<a href="https://docs.openshift.com/container-platform/latest/storage/persistent_storage/persistent-storage-aws.html">See here for more info on AWS EBS</a>)</p>
 
 <p>In the OSToy app click on <em>Persistent Storage</em> in the left menu.  In the “Filename” area enter a filename for the file you will create. (ie: “test-pv.txt”)</p>
 
-<p>Underneath that, in the “File Contents” box, enter text to be stored in the file. (ie: “Azure Red Hat OpenShift is the greatest thing since sliced bread!” or “test” :) ).  Then click “Create file”.</p>
+<p>Underneath that, in the “File Contents” box, enter text to be stored in the file. (i.e. “ROSA is the greatest thing since sliced bread!” or “test” :) ).  Then click “Create file”.</p>
 
 <p><img src="media/managedlab/17-2-ostoy-createfile.png" alt="Create File" /></p>
 
@@ -1910,7 +1853,7 @@ $ oc rsh ostoy-frontend-5fc8d486dc-wsw24
 lost+found   test-pv.txt
 
 /var/demo_files $ cat test-pv.txt 
-Azure Red Hat OpenShift is the greatest thing since sliced bread!
+ROSA is the greatest thing since sliced bread!
 </code></pre></div></div>
 
 <p>Then exit the SSH session by typing <code class="language-plaintext highlighter-rouge">exit</code>. You will then be in your CLI.</p>
@@ -2058,7 +2001,7 @@ data:
 
 <p><img src="media/managedlab/4-ostoy-arch.png" alt="OSToy Diagram" /></p>
 
-<p>As can be seen in the image above we see we have defined at least 2 separate pods, each with its own service.  One is the frontend web application (with a service and a publicly accessible route) and the other is the backend microservice with a service object created so that the frontend pod can communicate with the microservice (across the pods if more than one).  Therefore this microservice is not accessible from outside this cluster, nor from other namespaces/projects (due to ARO’s network policy, <strong>ovs-networkpolicy</strong>).  The sole purpose of this microservice is to serve internal web requests and return a JSON object containing the current hostname and a randomly generated color string.  This color string is used to display a box with that color displayed in the tile titled “Intra-cluster Communication”.</p>
+<p>As can be seen in the image above we see we have defined at least 2 separate pods, each with its own service.  One is the frontend web application (with a service and a publicly accessible route) and the other is the backend microservice with a service object created so that the frontend pod can communicate with the microservice (across the pods if more than one).  Therefore this microservice is not accessible from outside this cluster, nor from other namespaces/projects (due to ROSA’s network policy, <strong>ovs-networkpolicy</strong>).  The sole purpose of this microservice is to serve internal web requests and return a JSON object containing the current hostname and a randomly generated color string.  This color string is used to display a box with that color displayed in the tile titled “Intra-cluster Communication”.</p>
 
 <h3 id="networking">Networking</h3>
 
