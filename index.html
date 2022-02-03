@@ -256,7 +256,7 @@
                     
                 
 
-            <p><a href="https://aws.amazon.com/rosa/">Red Hat OpenShift Service on AWS</a> (ROSA) is a fully managed Red Hat OpenShift service in AWS that is jointly engineered and supported by Microsoft and Red Hat. In this lab, you’ll go through a set of tasks that will help you understand some of the concepts of deploying and securing container based applications on top of Red Hat OpenShift Service on AWS.</p>
+            <p><a href="https://aws.amazon.com/rosa/">Red Hat OpenShift Service on AWS</a> (ROSA) is a fully managed Red Hat OpenShift service in AWS that is jointly engineered and supported by AWS and Red Hat. In this lab, you’ll go through a set of tasks that will help you understand some of the concepts of deploying and securing container based applications on top of Red Hat OpenShift Service on AWS.</p>
 
 <p>You can use this guide as an OpenShift tutorial and as study material to help you get started to learn OpenShift.</p>
 
@@ -625,7 +625,7 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
   <tbody>
     <tr>
       <td>A public facing API <code class="language-plaintext highlighter-rouge">rating-api</code></td>
-      <td><a href="https://github.com/microsoft/rating-api">GitHub repo</a></td>
+      <td><a href="https://github.com/RH-ANZ-Workshops/rating-api">GitHub repo</a></td>
     </tr>
     <tr>
       <td>A public facing web frontend <code class="language-plaintext highlighter-rouge">rating-web</code></td>
@@ -912,7 +912,7 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
             <p>The <code class="language-plaintext highlighter-rouge">rating-api</code> is a NodeJS application that connects to mongoDB to retrieve and rate items. Below are some of the details that you’ll need to deploy this.</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">rating-api</code> on GitHub: <a href="https://github.com/microsoft/rating-api">https://github.com/microsoft/rating-api</a></li>
+  <li><code class="language-plaintext highlighter-rouge">rating-api</code> on GitHub: <a href="https://github.com/RH-ANZ-Workshops/rating-api">https://github.com/RH-ANZ-Workshops/rating-api</a></li>
   <li>The container exposes port 8080</li>
   <li>MongoDB connection is configured using an environment variable called <code class="language-plaintext highlighter-rouge">MONGODB_URI</code></li>
 </ul>
@@ -921,7 +921,7 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
 
 <p>To be able to setup CI/CD webhooks, you’ll need to fork the application into your personal GitHub repository.</p>
 
-<p><a class="github-button" href="https://github.com/microsoft/rating-api/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork microsoft/rating-api on GitHub">Fork</a></p>
+<p><a class="github-button" href="https://github.com/RH-ANZ-Workshops/rating-api/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork RH-ANZ-Workshop/rating-api on GitHub">Fork</a></p>
 
 <h3 id="use-the-openshift-cli-to-deploy-the-rating-api">Use the OpenShift CLI to deploy the <code class="language-plaintext highlighter-rouge">rating-api</code></h3>
 
