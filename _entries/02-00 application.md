@@ -13,9 +13,9 @@ The application consists of 3 components:
 
 | Component                                          | Link                                                               |
 |----------------------------------------------------|--------------------------------------------------------------------|
-| A public facing API `rating-api`                   | [GitHub repo](https://github.com/microsoft/rating-api)             |
-| A public facing web frontend `rating-web`          | [GitHub repo](https://github.com/adriangigante/rating-web)             |
-| A MongoDB with pre-loaded data                     | [Data](https://github.com/microsoft/rating-api/raw/master/data.tar.gz)   |
+| A public facing API `rating-api`                   | [GitHub repo](https://github.com/RH-ANZ-Workshops/rating-api)             |
+| A public facing web frontend `rating-web`          | [GitHub repo](https://github.com/RH-ANZ-Workshops/rating-web)             |
+| A MongoDB with pre-loaded data                     | [Data](https://github.com/RH-ANZ-Workshops/rating-api/raw/master/data.tar.gz)   |
 
 Once you're done, you'll have an experience similar to the below.
 
