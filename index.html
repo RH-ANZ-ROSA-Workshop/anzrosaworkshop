@@ -1191,7 +1191,15 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
 
 <p><img src="media/oc-get-route.png" alt="Retrieve the created route" /></p>
 
-<p>Notice the fully qualified domain name (FQDN) is comprised of the application name and project name by default. The remainder of the FQDN, the subdomain, is your Red Hat OpenShift Service on AWS cluster specific apps subdomain.</p>
+<blockquote>
+  <p><strong>Note</strong> Certain browsers are configured to default to HTTPS. Please note that the web app we are creating uses HTTP for simplicity. You may need to manually force the non-secure HTTP usage.</p>
+
+  <p>Please also note that the fully qualified domain name (FQDN) is comprised of the application name and project name by default. The remainder of the FQDN, the subdomain, is your Red Hat OpenShift Service on AWS cluster specific apps subdomain.</p>
+</blockquote>
+
+<p>You can also retrieve this from the web console by toggling to the <strong>Developer</strong> view, then navigating to <strong>Topology</strong> and selecting the “Open URL” icon at the top right of the Deployment. Alternatively, you can select the rating-web Deployment and find the route in the lower right corner (you may need to scroll down).</p>
+
+<p><img src="media/oc-get-route-ui.png" alt="Navigate to the created route" /></p>
 
 
     <!-- End parsedText -->
@@ -1212,7 +1220,7 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
     
 <p>Open the hostname in your browser, you should see the rating app page. Play around, submit a few votes and check the leaderboard.</p>
 
-<p><img src="media/rating-web-homepage.png" alt="rating-web homepage" /></p>
+<p><img src="media/app-overview-1.png" alt="rating-web homepage" /></p>
 
 
     <!-- End parsedText -->
