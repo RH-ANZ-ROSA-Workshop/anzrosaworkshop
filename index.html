@@ -1053,7 +1053,7 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
 
 <p>Replace the <code class="language-plaintext highlighter-rouge">&lt;secret&gt;</code> placeholder with the secret you retrieved in the previous step to have a URL similar to <code class="language-plaintext highlighter-rouge">https://api.qv4g35sq.westeurope.rosaapp.io:6443/apis/build.openshift.io/v1/namespaces/workshop01/buildconfigs/rating-api/webhooks/zLKX0A_0CQs6qWNwQqpV/github</code>. You’ll use this URL to setup the webhook on your GitHub repository.</p>
 
-<p>In your GitHub repository (e.g. https://github.com/<your GitHub="" username="">/rating-api), navigate to **Settings -&gt; Webhooks** and select **Add Webhook**.</your></p>
+<p>In your GitHub repository (e.g. <code class="language-plaintext highlighter-rouge">https://github.com/&lt;your GitHub username&gt;/rating-api</code>), navigate to <strong>Settings -&gt; Webhooks</strong> and select <strong>Add Webhook</strong>.</p>
 
 <p><img src="media/rating-api-github-webhook-navigation.png" alt="Rating API GitHub webhook navigation" /></p>
 
@@ -1071,9 +1071,15 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
 
 <p><img src="media/rating-api-github-addwebhook-warning.png" alt="GitHub add webhook warning" /></p>
 
-<p>If you click back into the newly created webhook, you should see a message from at the bottom with a green tick under <strong>Recent Deliveries</strong>.</p>
+<p>If you click back into the newly created webhook, you should see a new tab called <strong>Recent Deliveries</strong> showing a green tick.</p>
 
 <p><img src="media/rating-api-webhook-success.png" alt="GitHub webhook success" /></p>
+
+<blockquote>
+  <p><strong>Note</strong> Because GitHub changes its UI regularly, you might see <strong>Recent Deliveries</strong> in a different location than shown in the screenshot above, such as at the bottom. You can also refresh the browser a few moments after saving the newly created webhook and you’ll see the green tick beside it.</p>
+</blockquote>
+
+<p><img src="media/rating-api-webhook-success2.png" alt="GitHub webhook success2" /></p>
 
 <p>Now whenever you push a change to your GitHub repository a new build will automatically start in OpenShift. After a successful build, a new deployment will be triggered as well.</p>
 
@@ -1263,7 +1269,7 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
 
 <p>Replace the <code class="language-plaintext highlighter-rouge">&lt;secret&gt;</code> placeholder with the secret you retrieved in the previous step to have a URL similar to <code class="language-plaintext highlighter-rouge">https://api.qv4g35sq.westeurope.rosaapp.io:6443/apis/build.openshift.io/v1/namespaces/workshop01/buildconfigs/rating-web/webhooks/VZJewR0m1E65dBAv1IYM/github</code>. You’ll use this URL to setup the webhook on your GitHub repository.</p>
 
-<p>In your GitHub repository (e.g. https://github.com/<your GitHub="" username="">/rating-web), navigate to **Settings -&gt; Webhooks** and select **Add Webhook**.</your></p>
+<p>In your GitHub repository (e.g. <code class="language-plaintext highlighter-rouge">https://github.com/&lt;your GitHub username&gt;/rating-web</code>), navigate to <strong>Settings -&gt; Webhooks</strong> and select <strong>Add Webhook</strong>.</p>
 
 <p>Paste the URL output (similar to above) into the Payload URL field.</p>
 
@@ -1279,7 +1285,13 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
 
 <p><img src="media/rating-api-github-addwebhook-warning.png" alt="GitHub add webhook warning" /></p>
 
-<p>If you click back into the newly created webhook, you should see a message from at the bottom with a green tick under <strong>Recent Deliveries</strong>.</p>
+<p>If you click back into the newly created webhook, you should see a new tab called <strong>Recent Deliveries</strong> showing a green tick.</p>
+
+<p><img src="media/rating-api-webhook-success.png" alt="GitHub webhook success" /></p>
+
+<blockquote>
+  <p><strong>Note</strong> Because GitHub changes its UI regularly, you might see <strong>Recent Deliveries</strong> in a different location than shown in the screenshot above, such as at the bottom. You can also refresh the browser a few moments after saving the newly created webhook and you’ll see the green tick beside it.</p>
+</blockquote>
 
 <p>Now whenever you push a change to your GitHub repository a new build will automatically start in OpenShift. After a successful build, a new deployment will be triggered as well.</p>
 
@@ -1510,15 +1522,18 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>oc new-project ostoy&lt;student#&gt;
 Now using project <span class="s2">"ostoy&lt;student#&gt;"</span> on server <span class="s2">"https://api.gz49n8jb.westeurope.rosaapp.io:6443"</span><span class="nb">.</span>
-
-You can add applications to this project with the <span class="s1">'new-app'</span> command. For example, try:
-
-    oc new-app rails-postgresql-example
-
-to build a new example application <span class="k">in </span>Ruby. Or use kubectl to deploy a simple Kubernetes application:
-
-    kubectl create deployment hello-node <span class="nt">--image</span><span class="o">=</span>k8s.gcr.io/serve_hostname
 </code></pre></div></div>
+
+<blockquote>
+  <p><strong>Hint</strong> You can add applications to this project with the ‘new-app’ command. For example, try:</p>
+
+  <p><code class="language-plaintext highlighter-rouge">oc new-app rails-postgresql-example</code></p>
+
+  <p>To build a new example application in Ruby. Or use kubectl to deploy a simple Kubernetes application:</p>
+
+  <p><code class="language-plaintext highlighter-rouge">kubectl create deployment hello-node --image=k8s.gcr.io/serve_hostname</code></p>
+
+</blockquote>
 
 <p>Equivalently, you can also create this new project using the web UI by selecting <strong>Home -&gt; Projects</strong>, then clicking on the <strong>Create Project</strong> button on the right.</p>
 
@@ -2032,7 +2047,7 @@ spec:
     app: ostoy-microservice
 </code></pre></div></div>
 
-<p>In this case we will enter: <code class="language-plaintext highlighter-rouge">ostoy-microservice-svc.ostoy.svc.cluster.local</code></p>
+<p>In this case we will enter: <code class="language-plaintext highlighter-rouge">ostoy-microservice-svc.ostoy&lt;student#&gt;.svc.cluster.local</code></p>
 
 <p>We will see an IP address returned.  In our example it is <code class="language-plaintext highlighter-rouge">172.30.165.246</code>.  This is the intra-cluster IP address; only accessible from within the cluster.</p>
 
