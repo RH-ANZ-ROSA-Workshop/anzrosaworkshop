@@ -643,14 +643,7 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
                     <h2>Cluster Access</h2>
                 
 
-            <h3 id="ssh-session">SSH Session</h3>
-<p>So our first step will be to SSH into the jump host. Details will be provided by the instructor with the command to run and the required password.</p>
-
-<p>It will look similar to this: <strong>ssh student01@3.104.30…</strong></p>
-
-<p><img src="media/jumpssh.png" alt="Jump host SSH" /></p>
-
-<h2 id="connect-to-the-cluster">Connect to the cluster</h2>
+            <h2 id="connect-to-the-cluster">Connect to the cluster</h2>
 
 <p>The cluster web console’s URL will be listed as part of the lab Instructions provided by the instructor.</p>
 
@@ -687,7 +680,7 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
                     <h2>Create Project</h2>
                 
 
-            <h3 id="retrieve-the-login-command-and-token">Retrieve the login command and token</h3>
+            <h3 id="open-web-terminal-in-web-console-and-create-project">Open Web Terminal in web console and create project</h3>
 
 <!-- Begin collapsible container div -->
 <div class="collapsible-content-container">
@@ -697,51 +690,13 @@ ImageStream and Builds: <a href="https://cloudowski.com/articles/why-managing-co
   <div class="collapsible-content">
     <!-- Begin parsedText -->
     
-<p>Once you’re logged into the Web Console, click on the username on the top right, then click <strong>Copy Login Command</strong>.</p>
-
-<p><img src="media/login-command.png" alt="Copy login command link" /></p>
+<p>Once you’re logged into the Web Console, click on the <strong>Web Terminal icon</strong> at the top right. This will open a panel at the bottom prompting you to create your first project. In the <strong>Project name</strong> field, enter <strong>workshop&lt;student#&gt;</strong> using your student number as the suffix.</p>
 
 <blockquote>
-  <p><strong>Note</strong> Some browsers may take you back to the initial OpenShift login screen where you will need to re-enter your details.</p>
+  <p><strong>Note</strong> For example, if you are student 15, the entry would be workshop15</p>
 </blockquote>
 
-<p>Click <strong>Display Token</strong>, then copy the command in the section <strong>Log in with this token</strong>.</p>
-
-<p><img src="media/token.png" alt="Display token" /></p>
-
-<p><img src="media/login-command2.png" alt="Copy login command screen" /></p>
-
-<p>Take this login command and paste it into the SSH session we started on the jump host earlier in the prerequisites section.</p>
-
-<p><img src="media/oc-login.png" alt="OC Login through jump host" /></p>
-
-<p>We are now connected to our OpenShift cluster through the jump host.</p>
-
-
-    <!-- End parsedText -->
-  </div>
-  <!-- End collapsible container content div -->
-</div>
-<!-- End collapsible container div -->
-
-<h3 id="create-a-project">Create a project</h3>
-
-<!-- Begin collapsible container div -->
-<div class="collapsible-content-container">
-  <!-- Begin collapsible container button -->
-  <button class="toggle-collapsible">Toggle</button>
-  <!-- Begin collapsible container content div -->
-  <div class="collapsible-content">
-    <!-- Begin parsedText -->
-    
-<p>A project allows a community of users to organize and manage their content in isolation from other communities. To create a new project we run the <code class="language-plaintext highlighter-rouge">oc new-project</code> command followed by the name of the project we would like to create.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>oc new-project workshop&lt;student#&gt;
-</code></pre></div></div>
-
-<p>For example, if you are student 15, the command would be <code class="language-plaintext highlighter-rouge">oc new-project workshop15</code></p>
-
-<p><img src="media/oc-newproject.png" alt="Create new project" /></p>
+<p><img src="media/web-terminal.png" alt="Web Terminal" /></p>
 
 
     <!-- End parsedText -->
