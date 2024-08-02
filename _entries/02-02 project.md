@@ -15,6 +15,7 @@ Once you're logged into the Web Console, click on the **Web Terminal icon** at t
 
 ![Web Terminal](media/web-terminal.png)
 
+Once you click start, the Web Terminal will automatically be connected to the project you just created. You'll notice the Web Console updates with that project as well.
 
 {% endcollapsible %}
 
