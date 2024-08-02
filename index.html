@@ -285,11 +285,8 @@
             <h4 id="github-account">GitHub Account</h4>
 <p>You will need a personal GitHub account for today’s workshop. If you don’t already have one, you can sign up for free <a href="https://github.com/join">here</a>.</p>
 
-<h4 id="ssh-client">SSH Client</h4>
-<p>You will also need a client to SSH into a jumphost for command line access. Linux and Mac systems tend to have one included, and one of the more popular clients for Windows is PuTTY that you can download <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">here</a>. More recently, Windows 10 offers OpenSSH that can be <a href="https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse">installed as an optional feature</a>.</p>
-
 <h4 id="lab-setup">Lab Setup</h4>
-<p>Along with the web interface, we will be running commands directly against our cluster using a jump host. The SSH client mentioned above will be used to establish an SSH session to that jump host, and the diagram below provides a visual of how this hangs together.</p>
+<p>Within the web interface, we will be running commands directly against our cluster using what is known as the <a href="https://docs.openshift.com/container-platform/latest/web_console/web_terminal/installing-web-terminal.html">Web Terminal Operator</a>. This allows us to establish a session with the cluster using the currently logged in user, and all the required tooling (e.g. <a href="https://docs.openshift.com/container-platform/4.16/cli_reference/openshift_cli/getting-started-cli.html">oc</a> and <a href="https://kubernetes.io/docs/tasks/tools/">kubectl</a> command line tools) is made available.</p>
 
 <p><img src="media/diagram.png" alt="Diagram" /></p>
 
@@ -1550,9 +1547,9 @@ Now using project <span class="s2">"ostoy&lt;student#&gt;"</span> on server <spa
 
 <p>Download the Kubernetes deployment object yamls from the following locations to jump host to a directory of your choosing - just remember where you placed them for the next step.</p>
 
-<p><code class="language-plaintext highlighter-rouge">wget https://raw.githubusercontent.com/RH-ANZ-Workshops/anzworkshop/main/yaml/ostoy-fe-deployment.yaml</code></p>
+<p><code class="language-plaintext highlighter-rouge">curl -O https://raw.githubusercontent.com/RH-ANZ-Workshops/anzworkshop/main/yaml/ostoy-fe-deployment.yaml</code></p>
 
-<p><code class="language-plaintext highlighter-rouge">wget https://raw.githubusercontent.com/RH-ANZ-Workshops/anzworkshop/main/yaml/ostoy-microservice-deployment.yaml</code></p>
+<p><code class="language-plaintext highlighter-rouge">curl -O https://raw.githubusercontent.com/RH-ANZ-Workshops/anzworkshop/main/yaml/ostoy-microservice-deployment.yaml</code></p>
 
 <!-- Begin collapsible container div -->
 <div class="collapsible-content-container">
@@ -1564,9 +1561,9 @@ Now using project <span class="s2">"ostoy&lt;student#&gt;"</span> on server <spa
     
 <p>Feel free to open them up and take a look at what we will be deploying. For simplicity of this lab we have placed all the Kubernetes objects we are deploying in one “all-in-one” yaml file.  Though in reality there are benefits to separating these out into individual yaml files.</p>
 
-<p><a href="https://github.com/RH-ANZ-Workshops/anzworkshop/blob/main/yaml/ostoy-fe-deployment.yaml">ostoy-fe-deployment.yaml</a></p>
+<p><a href="https://raw.githubusercontent.com/RH-ANZ-Workshops/anzworkshop/main/yaml/ostoy-fe-deployment.yaml">ostoy-fe-deployment.yaml</a></p>
 
-<p><a href="https://github.com/RH-ANZ-Workshops/anzworkshop/blob/main/yaml/ostoy-microservice-deployment.yaml">ostoy-microservice-deployment.yaml</a></p>
+<p><a href="https://raw.githubusercontent.com/RH-ANZ-Workshops/anzworkshop/main/yaml/ostoy-microservice-deployment.yaml">ostoy-microservice-deployment.yaml</a></p>
 
 
     <!-- End parsedText -->
