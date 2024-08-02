@@ -5,7 +5,7 @@ title: Cluster Access
 parent-id: lab-ratingapp
 ---
 
-## Connect to the cluster
+### Connect to the cluster
 
 The cluster web console’s URL will be listed as part of the lab Instructions provided by the instructor.
 
