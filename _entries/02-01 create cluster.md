@@ -5,13 +5,6 @@ title: Cluster Access
 parent-id: lab-ratingapp
 ---
 
-### SSH Session
-So our first step will be to SSH into the jump host. Details will be provided by the instructor with the command to run and the required password.
-
-It will look similar to this: **ssh student01@3.104.30...**
-
-![Jump host SSH](media/jumpssh.png)
-
 ## Connect to the cluster
 
 The cluster web console’s URL will be listed as part of the lab Instructions provided by the instructor.
